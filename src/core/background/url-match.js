@@ -69,6 +69,6 @@ function test(string, pattern) {
 	return regex.test(string);
 }
 
-define(() => {
-	return { test };
-});
+export {
+	test
+};

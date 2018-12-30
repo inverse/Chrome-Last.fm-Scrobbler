@@ -44,4 +44,6 @@ class InjectResult {
 	}
 }
 
-define(() => InjectResult);
+export {
+	InjectResult
+};

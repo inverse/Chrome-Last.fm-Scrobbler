@@ -4,7 +4,7 @@
 *  http://www.webtoolkit.info/
 *
 **/
-define(function() {
+export function MD5() {
 	return function (string) {
 
 		function RotateLeft(lValue, iShiftBits) {
@@ -183,4 +183,4 @@ define(function() {
 
 		return temp.toLowerCase();
 	}
-});
+};

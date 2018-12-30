@@ -19,14 +19,13 @@
     "connectors/musickit-dom-inject.js",
     "connectors/soundcloud-dom-inject.js",
     "connectors/vk-dom-inject.js",
+    "core/background/*.js",
+    "core/background/*/*.js",
     "*.md"
   ],
 
   "background": {
-    "scripts": [
-      "vendor/require.min.js", "core/background/requirejs-config.js",
-      "core/background/main.js"
-    ]
+    "page": "core/background/main.html"
   },
 
   "homepage_url": "https://add0n.com/lastfm-scrobbler.html",
