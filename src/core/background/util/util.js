@@ -228,10 +228,40 @@ define((require) => {
 		throw new Error('Found no privacy policy documents!');
 	}
 
+	/**
+	 * Check whether we are in high contast mode or not.
+	 * 
+	 * @param {Document} document 
+	 */
+	function isHighContrast(document) {
+		let testElement = document.createElement('div');
+		testElement.style.color = 'rgb(31, 41, 59)';
+		document.body.appendChild(testElement);
+		
+		let strColor = document.defaultView ? document.defaultView.getComputedStyle(testElement, null).color : testElement.currentStyle.color;
+		strColor = strColor.replace(/ /g, '');
+		document.body.removeChild(testElement);
+
+		const isHighContrast = strColor !== 'rgb(31,41,59)';
+
+		return isHighContrast;
+	}
+
+	/**
+	 * Check whether high constrast mode is enabled and add class to body.
+	 * 
+	 * @param {Document} document 
+	 */
+	function prepareHighConstrast(document) {
+		if (isHighContrast(document)) {
+			document.body.classList.add('is-high-constast');
+		}
+	}
+
 	return {
 		debugLog, getCurrentTab, timeoutPromise, getPlatformName, openTab,
 		hideObjectValue, hideStringInText, isFullscreenMode, getSortedConnectors,
-		getSecondsToScrobble, getPrivacyPolicyFilename,
+		getSecondsToScrobble, getPrivacyPolicyFilename, isHighContrast, prepareHighConstrast,
 
 		MIN_TRACK_DURATION, DEFAULT_SCROBBLE_TIME, MAX_SCROBBLE_TIME,
 

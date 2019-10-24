@@ -371,6 +371,8 @@ require([
 	async function main() {
 		setupMessageListener();
 
+		Util.prepareHighConstrast(document);
+
 		song = await getCurrentSong();
 		if (song) {
 			onSongLoaded();

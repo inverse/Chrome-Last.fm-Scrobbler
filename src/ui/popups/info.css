@@ -139,3 +139,7 @@ input {
 	content: '\f202';
 	font-family: 'Font Awesome 5 Brands';
 }
+
+body.is-high-constast {
+	background: black;
+}
