@@ -237,7 +237,7 @@ define((require) => {
 		let testElement = document.createElement('div');
 		testElement.style.color = 'rgb(31, 41, 59)';
 		document.body.appendChild(testElement);
-		
+
 		let strColor = document.defaultView ? document.defaultView.getComputedStyle(testElement, null).color : testElement.currentStyle.color;
 		strColor = strColor.replace(/ /g, '');
 		document.body.removeChild(testElement);
@@ -254,7 +254,7 @@ define((require) => {
 	 */
 	function prepareHighConstrast(document) {
 		if (isHighContrast(document)) {
-			document.body.classList.add('is-high-constast');
+			document.body.classList.add('is-high-contrast');
 		}
 	}
 
