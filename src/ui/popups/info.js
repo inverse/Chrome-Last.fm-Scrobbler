@@ -4,13 +4,16 @@ require([
 	'webextension-polyfill',
 	'popups/info.popup',
 	'popups/info.view',
-], (browser, InfoPopup, InfoPopupView) => {
+	'util/util',
+], (browser, InfoPopup, InfoPopupView, Util, ) => {
 	/** General code */
 
 	/**
 	 * Entry point.
 	 */
 	async function main() {
+		Util.prepareHighConstrast(document);
+
 		const infoPopupView = new InfoPopupViewImpl();
 
 		browser.runtime.onMessage.addListener((request) => {

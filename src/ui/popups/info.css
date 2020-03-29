@@ -175,3 +175,16 @@ input {
 	cursor: default !important;
 	text-decoration: none !important;
 }
+
+/**
+* High contrast settings
+*/
+
+body.is-high-contrast {
+	background:#000;
+	color: #e0e600;
+}
+
+body.is-high-contrast a {
+	color: #7979ef;
+} 
