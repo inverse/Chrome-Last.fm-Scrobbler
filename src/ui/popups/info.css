@@ -185,6 +185,10 @@ body.is-high-contrast {
 	color: #e0e600;
 }
 
-body.is-high-contrast a {
+body.is-high-contrast a, body.is-high-contrast button {
 	color: #7979ef;
 } 
+
+body.is-high-contrast .unloved::before {
+	color: #7979ef;
+}
